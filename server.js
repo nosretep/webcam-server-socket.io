@@ -114,10 +114,8 @@ function(
     function startMotion() {
         exec = child_process.exec;
         var motion = exec('motion -c ' + motionConfFile + ' &', function(error, stdout, stderr) {
-            if(error) return;
-            if(stdout && stdout.length > 0) {
-                console.log(motion.pid);
-            }
+            if(error) { return; }
+            console.log(motion.pid);
         });
     }
 
